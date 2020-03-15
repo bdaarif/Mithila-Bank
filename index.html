@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,15 +78,24 @@
     //  const depositamount = document.getElementById("depositAmount").value;
     //  const depositNumber = parseFloat(depositamount);
     const depositNumber = getInputNumber("depositAmount");
+     
+    if(depositNumber<0){
+      alert("deposit number cant be negative")
+    }
+    else{
 
+      updateSpanText("currentDeposit", depositNumber);
+     updateSpanText("currentBalance", depositNumber);
+     document.getElementById("depositAmount").value = "";
+
+
+    }
     //  const currentdeposit = document.getElementById("currentDeposit").innerText;
     //  const currentDepositNumber = parseFloat(currentdeposit);
     //  const totalDeposit = depositNumber + currentDepositNumber;
     //  document.getElementById("currentDeposit").innerText = totalDeposit;
 
-     updateSpanText("currentDeposit", depositNumber);
-     updateSpanText("currentBalance", depositNumber);
-     document.getElementById("depositAmount").value = "";
+    
    })
 
     //withdraw button event handler
